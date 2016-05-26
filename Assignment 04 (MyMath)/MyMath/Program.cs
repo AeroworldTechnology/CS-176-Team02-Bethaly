@@ -159,6 +159,12 @@ namespace MyMath
 
         public static bool PasswordCheck(string userEntry)
         {
+            // Quick check of length of entered password
+            if (userEntry.Length < 8)
+            {
+                return false;
+            }
+
             string validLettersSmall = "abcdefghijklmnopqrstuvwxyz";
             string validLettersCaps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             string validSpecialChar = "`~!@#$%^&*()_-+={[}]:;\"\'<,>.?/|\\";
