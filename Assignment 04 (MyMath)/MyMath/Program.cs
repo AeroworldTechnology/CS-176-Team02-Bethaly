@@ -35,6 +35,10 @@ namespace MyMath
                 case 1:
                     // "1. A function that takes an array of integer and returns the sum of the integers."
 
+                    int[] inputValue = { };
+
+                    int resultSum = SumOfIntegers(inputValue);
+
                     break;
                 case 2:
                     // "2. A function that given two strings returns true or false depending on if the second string is in the first string."
@@ -76,7 +80,7 @@ namespace MyMath
 
                     GetPasswordFromUser:
                     WriteLine();
-                    WriteLine("The pasword should have at least one uppercase, special character, a number, lowercase letter, and the length should be at least 8 characters.");
+                    WriteLine("The pasword should have at least one uppercase chacter, one special character, one number character, onw lowercase letter, and should be at least 8 characters in length.");
                     WriteLine("Please enter a new password: ");
                     string userEntry = ReadLine();
 
@@ -106,15 +110,29 @@ namespace MyMath
             goto MainMenu;
             Exit: { }
         }
-        public static int SumOfIntegers()
+        public static int SumOfIntegers(int[] array)
         {
             int result = 0;
+
             return result;
         }
         public bool AContainsB(int numberA, int numberB)
         {
-            return true;
+            // Test if B is longer than A [fail]
+
+            // Loop through A to test each substring
+            // Make sure to loop from 0 thru (A.Length - B.Length)
+
+            // If B = substring of A, return true;
+            if (true)
+            {
+                return true;
+            }
+
+            // If loop finishes without a return true, then return false
+            return false;
         }
+
         public static int SwapAandB(int firstValue, int secondValue)
         {
             WriteLine();
