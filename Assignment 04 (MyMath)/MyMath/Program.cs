@@ -12,13 +12,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyMath
+namespace AndyBetha
 {
     class Program
     {
         static void Main(string[] args)
         {
-            MainMenu:
+        MainMenu:
             Clear();
             WriteLine("Please select a function:");
             WriteLine("1. Sum of integers");
@@ -33,7 +33,17 @@ namespace MyMath
             switch (Convert.ToInt16(menuSelection))
             {
                 case 1:
-                    // "1. A function that takes an array of integer and returns the sum of the integers."
+                   // "1. A function that takes an array of integer and returns the sum of the integers."
+                    WriteLine("Please enter the lenght of an array of integer");
+
+                    String input = ReadLine();
+                    int lenght = Convert.ToInt32(input);
+                    int[] inputValue = { };
+
+                    WriteLine("Please enter integers at a time and press Enter");
+
+                    int resultSum = SumOfIntegers(inputValue);
+                    WriteLine("The result is" + resultSum);
 
                     break;
                 case 2:
@@ -72,11 +82,11 @@ namespace MyMath
                     WriteLine("{0} raised to the power of {1} is {2}", xValue, nValue, calcValue);
                     break;
                 case 5:
-                    // "5. Write a function that given a password checks it to see if it is in the right format and returns true or false. The password must have at least 8 characters, one character must be a capitalized letter, one character must be a special character and one character must be a digit."
+                // "5. Write a function that given a password checks it to see if it is in the right format and returns true or false. The password must have at least 8 characters, one character must be a capitalized letter, one character must be a special character and one character must be a digit."
 
-                    GetPasswordFromUser:
+                GetPasswordFromUser:
                     WriteLine();
-                    WriteLine("The pasword should have at least one uppercase, special character, a number, lowercase letter, and the length should be at least 8 characters.");
+                    WriteLine("The pasword should have at least one uppercase chacter, one special character, one number character, onw lowercase letter, and should be at least 8 characters in length.");
                     WriteLine("Please enter a new password: ");
                     string userEntry = ReadLine();
 
@@ -104,17 +114,40 @@ namespace MyMath
             WriteLine("Please any key to continue...");
             ReadKey();
             goto MainMenu;
-            Exit: { }
+        Exit: { }
         }
-        public static int SumOfIntegers()
+
+        public static int SumOfIntegers(int[] array)
         {
             int result = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                string input2 = ReadLine();
+                int numbers = Convert.ToInt16(input2);
+
+                array[i] = numbers;
+                result += numbers;
+            }
+
             return result;
         }
         public bool AContainsB(int numberA, int numberB)
         {
-            return true;
+            // Test if B is longer than A [fail]
+
+            // Loop through A to test each substring
+            // Make sure to loop from 0 thru (A.Length - B.Length)
+
+            // If B = substring of A, return true;
+            if (true)
+            {
+                return true;
+            }
+
+            // If loop finishes without a return true, then return false
+            return false;
         }
+
         public static int SwapAandB(int firstValue, int secondValue)
         {
             WriteLine();
