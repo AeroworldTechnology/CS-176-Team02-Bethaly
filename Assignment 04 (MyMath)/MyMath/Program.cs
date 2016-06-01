@@ -34,11 +34,16 @@ namespace MyMath
             {
                 case 1:
                     // "1. A function that takes an array of integer and returns the sum of the integers."
+                    WriteLine("Please enter an array of integers:");
 
-                    int[] inputValue = { };
-
-                    int resultSum = SumOfIntegers(inputValue);
-
+                    int[] input = new int[10];
+                    for (int i = 0; i < input.Length; i++)
+                    {
+                        input[i] = Convert.ToInt16(ReadLine());
+                    }
+                    
+                    int resultSum = SumOfIntegers(input);
+                    WriteLine("The result is" + resultSum);
                     break;
                 case 2:
                     // "2. A function that given two strings returns true or false depending on if the second string is in the first string."
@@ -110,26 +115,62 @@ namespace MyMath
             goto MainMenu;
             Exit: { }
         }
+
         public static int SumOfIntegers(int[] array)
         {
             int result = 0;
 
+            for (int i = 0; i < array.Length; i++)
+            {
+                int value = array[i];
+                result += value;
+            }
+
             return result;
         }
+
         public bool AContainsB(int numberA, int numberB)
         {
-            // Test if B is longer than A [fail]
 
             // Loop through A to test each substring
             // Make sure to loop from 0 thru (A.Length - B.Length)
 
             // If B = substring of A, return true;
-            if (true)
-            {
-                return true;
-            }
-
             // If loop finishes without a return true, then return false
+            WriteLine("Please enter the string to check against: ");
+            string stringA = ReadLine();
+
+            WriteLine("Please enter the sub-string: ");
+            string stringB = ReadLine();
+
+            // Test if B is the same as A [fail]
+            if (stringA == stringB)
+            {
+                WriteLine("Both strings are the same.");
+                return false;
+            }
+            // Test if B is longer than A [fail]
+            if (stringA.Length < stringB.Length)
+            {
+                WriteLine("The sub-string is larger than the string being checked against.");
+                return false;
+            }
+            if (stringA.Length > stringB.Length)
+            {
+                for (int j = 0; j < (stringA.Length - stringB.Length); j++)
+                {
+                    if (stringA.Substring(j, stringB.Length) == stringB)
+                    {
+                        WriteLine("Does contain {0} at position {1}. (index {2})", stringB, j + 1, j);
+                        WriteLine("{0}[{1}]{2}", stringA.Substring(0, j), stringB, stringA.Substring(j + stringB.Length));
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
             return false;
         }
 
