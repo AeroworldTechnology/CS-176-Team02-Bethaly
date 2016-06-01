@@ -1,6 +1,6 @@
 ﻿// Project: Assignment #4
 // Name: Andy E. Wold and Bethaly Tenango
-// Date: 23 May 2016
+// Date: 01 Jun 2016
 // Description: 
 // Instructor: Bro. Daniel Masterson
 // Course: CS 176 -- Windows Desktop Development
@@ -23,9 +23,9 @@ namespace MyMath
             WriteLine("Please select a function:");
             WriteLine("1. Sum of integers");
             WriteLine("2. A Contains B");
-            WriteLine("3. Swap A and B  [done]");
-            WriteLine("4. A to the power of B  [done]");
-            WriteLine("5. Password Verification [done]");
+            WriteLine("3. Swap A and B");
+            WriteLine("4. A to the power of B");
+            WriteLine("5. Password Verification");
             WriteLine("9. Unit Tests");
             WriteLine("0. EXIT");
             string menuSelection = ReadLine();
@@ -35,19 +35,33 @@ namespace MyMath
                 case 1:
                     // "1. A function that takes an array of integer and returns the sum of the integers."
                     WriteLine("Please enter an array of integers:");
+                    WriteLine("Enter zero (0) to stop the array.");
+                    int[] inputArray = new int[30];
 
-                    int[] input = new int[10];
-                    for (int i = 0; i < input.Length; i++)
-                    {
-                        input[i] = Convert.ToInt16(ReadLine());
-                    }
-                    
-                    int resultSum = SumOfIntegers(input);
-                    WriteLine("The result is" + resultSum);
+                    int resultSum = SumOfIntegers(inputArray);
+                    WriteLine("The result is " + resultSum);
                     break;
                 case 2:
                     // "2. A function that given two strings returns true or false depending on if the second string is in the first string."
 
+                    WriteLine("Please enter the string to check against: ");
+                    string stringA = ReadLine();
+
+                    WriteLine("Please enter the sub-string: ");
+                    string stringB = ReadLine();
+
+                    bool searchResult = AContainsB(stringA, stringB);
+
+                    Write("The check string does ");
+                    if (searchResult)
+                    {
+                        Write("");
+                    }
+                    else
+                    {
+                        Write("NOT");
+                    }
+                    WriteLine("contain the sub-string.");
                     break;
                 case 3:
                     // "3. A function that given two integers swaps the value of the two integers."
@@ -116,62 +130,62 @@ namespace MyMath
             Exit: { }
         }
 
-        public static int SumOfIntegers(int[] array)
+        public static int SumOfIntegers(int[] inputArray)
         {
             int result = 0;
-
-            for (int i = 0; i < array.Length; i++)
+            for (int i = 0; i < inputArray.Length; i++)
             {
-                int value = array[i];
-                result += value;
-            }
+                inputArray[i] = Convert.ToInt16(ReadLine());
 
+                if (inputArray[i] == 0)
+                {
+                    break;
+                }
+                else result += inputArray[i];
+            }
             return result;
         }
 
-        public bool AContainsB(int numberA, int numberB)
+        public static bool AContainsB(string stringA, string stringB)
         {
-
             // Loop through A to test each substring
             // Make sure to loop from 0 thru (A.Length - B.Length)
 
             // If B = substring of A, return true;
             // If loop finishes without a return true, then return false
-            WriteLine("Please enter the string to check against: ");
-            string stringA = ReadLine();
-
-            WriteLine("Please enter the sub-string: ");
-            string stringB = ReadLine();
-
             // Test if B is the same as A [fail]
+            bool contain = true;
             if (stringA == stringB)
             {
                 WriteLine("Both strings are the same.");
                 return false;
             }
             // Test if B is longer than A [fail]
-            if (stringA.Length < stringB.Length)
+            else if (stringA.Length < stringB.Length)
             {
                 WriteLine("The sub-string is larger than the string being checked against.");
                 return false;
             }
-            if (stringA.Length > stringB.Length)
+
+            else if (stringA.Length > stringB.Length)
             {
-                for (int j = 0; j < (stringA.Length - stringB.Length); j++)
+                int difference = stringA.Length - stringB.Length;
+
+                for (int i = 0; i < difference + 1; i++)
                 {
-                    if (stringA.Substring(j, stringB.Length) == stringB)
+                    if (stringA.Substring(i, stringB.Length) == stringB)
                     {
-                        WriteLine("Does contain {0} at position {1}. (index {2})", stringB, j + 1, j);
-                        WriteLine("{0}[{1}]{2}", stringA.Substring(0, j), stringB, stringA.Substring(j + stringB.Length));
-                        return true;
+                        WriteLine("Does contain {0} at position {1}. (index {2})", stringB, i + 1, i);
+                        WriteLine("{0}[{1}]{2}", stringA.Substring(0, i), stringB, stringA.Substring(i + stringB.Length));
+                        return contain = true;
                     }
                     else
                     {
-                        return false;
+                        contain = false;
                     }
                 }
             }
-            return false;
+            return contain;
         }
 
         public static int SwapAandB(int firstValue, int secondValue)

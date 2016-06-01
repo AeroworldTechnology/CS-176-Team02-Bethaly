@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMath", "MyMath\MyMath.csproj", "{0451EA16-210E-40E6-8ED9-9B681A75FFA9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_method_AContainsB", "ConsoleApplication1\_method_AContainsB.csproj", "{3CBB8188-6916-4DA5-9A3B-FABD540117EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_method_SumOfIntegers", "SumOfIntegers_method\_method_SumOfIntegers.csproj", "{43D7F989-9ADD-4841-B049-92279670D456}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{0451EA16-210E-40E6-8ED9-9B681A75FFA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0451EA16-210E-40E6-8ED9-9B681A75FFA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0451EA16-210E-40E6-8ED9-9B681A75FFA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CBB8188-6916-4DA5-9A3B-FABD540117EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CBB8188-6916-4DA5-9A3B-FABD540117EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CBB8188-6916-4DA5-9A3B-FABD540117EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CBB8188-6916-4DA5-9A3B-FABD540117EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43D7F989-9ADD-4841-B049-92279670D456}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43D7F989-9ADD-4841-B049-92279670D456}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43D7F989-9ADD-4841-B049-92279670D456}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43D7F989-9ADD-4841-B049-92279670D456}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
