@@ -11,9 +11,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UnitTestContains
+namespace test_AContainsB
+
 {
-    public class Class1
+    public class test_AContainsB
     {
         //Method to find if the string B is in string A
         public static bool AContainsB(string sA, string sB)

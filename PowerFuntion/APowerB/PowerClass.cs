@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace APowerB
+namespace class_APowerB
 {
     public class PowerClass
     {

@@ -11,9 +11,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Password
+namespace class_Password
 {
-    public class Class1
+    public class Password
     {
         public static bool PasswordCheck(string userEntry)
         {

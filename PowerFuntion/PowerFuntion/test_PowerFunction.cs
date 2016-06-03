@@ -7,12 +7,12 @@
 
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using APowerB;
+using class_APowerB;
 
-namespace PowerFuntion
+namespace test_PowerFuntion
 {
     [TestClass]
-    public class UnitTest1
+    public class test_PowerFunction
     {
         [TestMethod]
         public void TestMethod1()

@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{38438985-6F46-409A-BB73-D85A0503F759}</ProjectGuid>
+    <ProjectGuid>{B51F54E0-7E88-42EC-84D7-70335708624C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PowerFuntion</RootNamespace>
-    <AssemblyName>PowerFuntion</AssemblyName>
+    <RootNamespace>test_enumDemo</RootNamespace>
+    <AssemblyName>test_enumDemo</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -50,13 +50,14 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="ProgramTests.cs" />
+    <Compile Include="unitTest_enumDemo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\APowerB\APowerB.csproj">
-      <Project>{e41fa17f-d0f7-4f63-a713-9ebdf662b3f7}</Project>
-      <Name>APowerB</Name>
+    <ProjectReference Include="..\enumDemo\enumDemo.csproj">
+      <Project>{A10AB984-9EF7-4F8A-9660-B9E5DB9C13A0}</Project>
+      <Name>enumDemo</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

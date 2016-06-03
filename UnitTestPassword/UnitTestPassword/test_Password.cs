@@ -1,32 +1,29 @@
 ﻿// Project: Assignment #4
 // Name: Andy E. Wold and Bethaly Tenango
 // Date: 01 Jun 2016
-// Description: Unit Test SwapAandB
+// Description: Unit Test: Method PasswordCheck
 // Instructor: Bro. Daniel Masterson
 // Course: CS 176 -- Windows Desktop Development
-
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TestSwapAB;
+using test_Password;
 
-namespace SwapIntAB
+namespace test_Password
 {
     [TestClass]
-    public class UnitTest1
+    public class test_Password
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Password()
         {
-            //Arrage
-            int firstValue = 125;
-            int secondValue = 37;
+            //Arrange
+            string userEntry = "Betha+Andy12";
 
             //Act
-
-            int swapResult =SwapClass.SwapAandB(firstValue, secondValue);
+            bool result = Password.PasswordCheck(userEntry);
 
             //Assert
-            Assert.AreEqual(swapResult, 37);
+            Assert.IsTrue(result);
         }
     }
 }

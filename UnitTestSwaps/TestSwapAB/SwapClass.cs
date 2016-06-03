@@ -12,11 +12,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestSwapAB
+namespace class_SwapAB
 {
     public class SwapClass
     {
-     public static int SwapAandB(int firstValue, int secondValue)
+        public static int SwapAandB(int firstValue, int secondValue)
         {
             WriteLine();
             WriteLine("You entered {0} for the first value, and {1} for the second value", firstValue, secondValue);
