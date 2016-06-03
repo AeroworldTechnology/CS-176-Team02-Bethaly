@@ -89,7 +89,7 @@ namespace Andy.Wold_Bethaly.Tenango_Week04_Lab_2
             }
 
             // Calculate the average grade for each student (round to 1/100.)
-
+            int integer = 0;
 
             // Calculate the class average for each assignment (round to 1/100.)
 
