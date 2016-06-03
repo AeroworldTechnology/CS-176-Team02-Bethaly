@@ -1,6 +1,6 @@
 ﻿// Project: Assignment #4
 // Name: Andy E. Wold and Bethaly Tenango
-// Date: 01 Jun 2016
+// Date: 03 Jun 2016
 // Description: 
 // Instructor: Bro. Daniel Masterson
 // Course: CS 176 -- Windows Desktop Development
@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace MyMath
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -26,7 +26,6 @@ namespace MyMath
             WriteLine("3. Swap A and B");
             WriteLine("4. A to the power of B");
             WriteLine("5. Password Verification");
-            WriteLine("9. Unit Tests");
             WriteLine("0. EXIT");
             string menuSelection = ReadLine();
 
@@ -37,6 +36,17 @@ namespace MyMath
                     WriteLine("Please enter an array of integers:");
                     WriteLine("Enter zero (0) to stop the array.");
                     int[] inputArray = new int[30];
+
+                    for (int i = 0; i < inputArray.Length; i++)
+                    {
+                        inputArray[i] = Convert.ToInt32(ReadLine());
+
+                        WriteLine(inputArray[i]);
+                        if (inputArray[i] == 0)
+                        {
+                            break;
+                        }
+                    }
 
                     int resultSum = SumOfIntegers(inputArray);
                     WriteLine("The result is " + resultSum);
@@ -59,7 +69,7 @@ namespace MyMath
                     }
                     else
                     {
-                        Write("NOT");
+                        Write("NOT ");
                     }
                     WriteLine("contain the sub-string.");
                     break;
@@ -75,7 +85,7 @@ namespace MyMath
                     string secondEntry = ReadLine();
                     int secondValue = Convert.ToInt16(secondEntry);
 
-                    int swapResult = SwapAandB(firstValue, secondValue);
+                    int[] swapResult = SwapAandB(firstValue, secondValue);
 
                     break;
                 case 4:
@@ -117,9 +127,6 @@ namespace MyMath
                         goto GetPasswordFromUser;
                     }
                     break;
-                case 9:
-                    // "Write unit tests for each of these functions. You will be expected to demo your unit tests on the due date in class."
-                    break;
                 default:
                     goto Exit;
             }
@@ -135,13 +142,7 @@ namespace MyMath
             int result = 0;
             for (int i = 0; i < inputArray.Length; i++)
             {
-                inputArray[i] = Convert.ToInt16(ReadLine());
-
-                if (inputArray[i] == 0)
-                {
-                    break;
-                }
-                else result += inputArray[i];
+                result += inputArray[i];
             }
             return result;
         }
@@ -188,19 +189,20 @@ namespace MyMath
             return contain;
         }
 
-        public static int SwapAandB(int firstValue, int secondValue)
+        public static int[] SwapAandB(int firstValue, int secondValue)
         {
             WriteLine();
             WriteLine("You entered {0} for the first value, and {1} for the second value", firstValue, secondValue);
 
-            // Perform a three-way swap of variables
+            // Perform a three-hand swap of variables
             int swapValue = firstValue;
             firstValue = secondValue;
             secondValue = swapValue;
 
             WriteLine();
             WriteLine("Now, {0} is the first value, and {1} is the second value", firstValue, secondValue);
-            return 0;
+            int[] swapResult = { firstValue, secondValue };
+            return swapResult;
         }
 
         public static int AtoPowerB(int xValue, int nValue)
